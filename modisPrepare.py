@@ -266,6 +266,6 @@ def viCal(band1, band2, band3 = None):
 
 
 if __name__== "__mian__":
-	print "tested on a windos desktop"
+	print "tested on a windows desktop"
 
 
