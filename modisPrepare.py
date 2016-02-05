@@ -210,14 +210,14 @@ def viCal(band1, band2, band3 = None):
 
 	# ndvi calculation NDVI =  ( NIR - RED ) / ( NIR + RED )
 	with np.errstate(divide='ignore', invalid='ignore'):
-		ndvi = (b2-b1)/(b2+b1)
+		ndvi = (b2*0.0001-b1*0.0001)/(b2*0.0001+b1*0.0001)
 	print'sampel some nvdi value', ndvi[500][300:320]
 	ndvi[ndvi== -inf] = nan 
 	ndvi[ndvi== inf] = nan 
 
 	# setup the output file info 
 	outFileName = os.path.join(os.path.dirname(band1), 'vi_' + re.search('A\d+_ca.tif', band1).group(0))
-	print outFileName
+	print 'output file name %s' %outFileName
 
 	if band3 is None: 
 		outDs = driver.Create(outFileName, cols, rows, 1, gdal.GDT_Float32)
