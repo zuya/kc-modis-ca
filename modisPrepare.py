@@ -265,7 +265,7 @@ def viCal(band1, band2, band3 = None):
 	del ndvi, rows, cols, driver, projection, nodata
 
 
-if __name__== "__mian__":
+if __name__== "__main__":
 	print "tested on a windows desktop"
 
 
